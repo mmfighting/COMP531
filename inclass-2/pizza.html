@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <title>
+      Lu Han's Page
+    </title>
+  </head>
+
+  <body>
+    <h1> Pizza Order Form </h1>
+
+    <img src="http://chewoutloud.files.wordpress.com/2013/02/deep-dish-pizza-3.jpg" alt="pizza_logo" style="width:500px;height:334px;">
+
+    <form id="pizza_order_form" method="" action="#">
+        <p><b>Name:</b><br/><input type="text" name="name" required></p>
+        <p><b>Address:</b> #### Street Name ....<br/>
+            <input type="text" name="address" pattern="^\d+[ ][A-Za-z0-9. ]+"required></p>
+        <p><b>Phone Number:</b> 123-123-1234 <br/>
+            <input type="tel" name="phone" pattern="^\d{3}-\d{3}-\d{4}$" required></p>
+        <p><b>Pizza size:</b><br/>
+            <input type="radio" name="size" value="large" required>Large 
+            <input type="radio" name="size" value="medium">Medium 
+            <input type="radio" name="size" value="small">Small</p>
+        <p><b>Pizza Toppings</b><br/>
+            <input type="checkbox" name="sausage" value="sausage">Sausage 
+            <input type="checkbox" name="pepperoni" value="pepperoni">Pepperoni 
+            <input type="checkbox" name="lives" value="olives">Olives 
+            <input type="checkbox" name="anchovies" value="anchovies">Anchovies 
+            <input type="checkbox" name="onion" value="onion">Onion
+    </form>
+
+    <button type="submit" form="pizza_order_form">Place Order!</button>
+    <button type="reset" form="pizza_order_form" value="clear"> Clear! </button>
+
+  </body>
+  <script type="text/javascript">
+    
+  </script>
+</html>

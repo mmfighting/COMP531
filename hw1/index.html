@@ -6,6 +6,21 @@
     <title>
         Registration Form
     </title>
+    <style type="text/css">
+        button-style{
+        border : solid 2px #458dd1;
+        border-radius : 3px;
+        moz-border-radius : 3px;
+        -webkit-box-shadow : 0px 0px 15px rgba(18,17,18,1.0);
+        -moz-box-shadow : 0px 0px 15px rgba(18,17,18,1.0);
+        box-shadow : 0px 0px 15px rgba(18,17,18,1.0);
+        font-size : 20px;
+        color : #f2f2ed;
+        padding : 1px 10px;
+        background-color : #3a6ce0;
+
+    }
+    </style>
   </head>
 
   <body onload="getTimeStamp()">
@@ -13,11 +28,11 @@
 
     <form id="registration_form" method="GET" action="formProcessor.html">
         <p><b>Account name:</b> (Upper and lower case letters and digits can be used in account name. Account name cannot start with a digit.)<br/>
-        <input type="text" name="acc_name" pattern="^[A-Za-z][A-Za-z0-9]+$" required></p>
+        <input type="text" name="acc_name" pattern="^[A-Za-z][A-Za-z0-9]+$" placeholder="account name" required></p>
         <p><b>Display name:</b> (optional) <br/>
-        <input type="text" name="disp_name"></p>
+        <input type="text" name="disp_name" placeholder="display name"></p>
         <p><b>Email address:</b><br/>
-        <input type="email" name="email" pattern="[A-Za-z0-9]+@[A-Za-z0-9]+[.][A-Za-z0-9]+" required></p>
+        <input type="email" name="email" pattern="[A-Za-z0-9]+@[A-Za-z0-9]+[.][A-Za-z0-9]+" placeholder="***@***.***" required></p>
         <p><b>Phone Number:</b> ###-###-#### <br/>
         <input type="tel" name="phone" pattern="^\d{3}-\d{3}-\d{4}$" placeholder="###-###-####" required></p>
         <p><b>Date of Birth:</b> (mm/dd/yyyy) One must be at least 18 years old to register.<br/>
@@ -27,7 +42,7 @@
         <p><b>Password:</b><br/>
         <input type="password" name="password1" placeholder="password" required></p>
         <p><b>Password confirmation:</b><br/>
-        <input type="password" name="password2" placeholder="Please reenter your password here" required></p>
+        <input type="password" name="password2" placeholder="Please re-enter your password here" required></p>
         <input type="hidden" id="timestamp" name="timestamp" value="">
         <input type="submit" value="Submit!" onclick="return validation(this.parentElement)">
         <input type="reset" value="Clear!">

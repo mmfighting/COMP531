@@ -38,8 +38,8 @@
 			if(parseInt(indicator.innerHTML)>=1){
 				indicator.innerHTML=indicator.innerHTML-1
 			}
-      if(indicator.innerHTML==0){
-              clearInterval(id)
+      if(indicator.innerHTML===0){
+        clearInterval(id)
         redirect()
       }
 		}
@@ -47,18 +47,16 @@
     var id
   	function go(){
       document.getElementById("indicator").innerHTML=15
+      id=setInterval(timer,1000)
       setTimeout(alertmsg,5000)
-			id=setInterval(timer,1000)
   	}
 
     function pauseTimer(){
       clearInterval(id)
-      console.log(id)
     }
 
     function resume(){
       id=setInterval(timer,1000)
-      console.log(id)
     }
 
   	function eraseText(){

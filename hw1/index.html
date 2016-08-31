@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+      <meta charset="utf-8">
+      <meta name="author" content="luhan">
+    <title>
+        Registration Form
+    </title>
+  </head>
+
+  <body onload="getTimeStamp()">
+    <h1> Registration Form </h1>
+
+    <form id="registration_form" method="GET" action="formProcessor.html">
+        <p><b>Account name:</b> (Upper and lower case letters and digits can be used in account name. Account name cannot start with a digit.)<br/>
+        <input type="text" name="acc_name" pattern="^[A-Za-z][A-Za-z0-9]+$" required></p>
+        <p><b>Display name:</b> (optional) <br/>
+        <input type="text" name="disp_name"></p>
+        <p><b>Email address:</b><br/>
+        <input type="email" name="email" pattern="[A-Za-z0-9]+@[A-Za-z0-9]+[.][A-Za-z0-9]+" required></p>
+        <p><b>Phone Number:</b> ###-###-#### <br/>
+        <input type="tel" name="phone" pattern="^\d{3}-\d{3}-\d{4}$" placeholder="###-###-####" required></p>
+        <p><b>Date of Birth:</b> (mm/dd/yyyy) One must be at least 18 years old to register.<br/>
+        <input type="date" name="dob" placeholder="mm/dd/yyyy" min="1890-01-01" max="1998-12-30" required></p>
+        <p><b>Zip code:</b><br/>
+        <input type="text" name="zipcode" pattern="^\d{5}$" placeholder="Please enter five-digit zipcode" required></p>
+        <p><b>Password:</b><br/>
+        <input type="password" name="password1" placeholder="password" required></p>
+        <p><b>Password confirmation:</b><br/>
+        <input type="password" name="password2" placeholder="Please reenter your password here" required></p>
+        <input type="hidden" id="timestamp" name="timestamp" value="">
+        <input type="submit" value="Submit!" onclick="return validation(this.parentElement)">
+        <input type="reset" value="Clear!">
+    </form>
+  </body>
+  
+  <script type="text/javascript">
+
+
+    function getTimeStamp() {
+        document.getElementById("timestamp").value = new Date(Date.now())
+    }
+
+    function calculateAge(form){
+        var today=new Date(Date.now())
+        var birthd=new Date(form.dob.value)
+        var age=today.getFullYear()-birthd.getFullYear()
+        var month=today.getMonth()-birthd.getMonth()
+        var date=today.getDate()-birthd.getDate()
+        console.log(month)
+        if (month<0){
+            age--
+        }
+        if (month==0 && date<0){
+            age--
+        }
+        return age
+    }
+      
+      function validation(form){  
+        if (form.password1.value!=form.password2.value){
+            window.alert("The password and confirmation you entered do not match!!")
+            return false
+        }
+
+        
+        if (calculateAge(form)<18){
+            window.alert("You are not 18 years old or older so that you cannot register!")
+            return false
+        }else{
+            return true
+        }
+      }
+  </script>
+</html>

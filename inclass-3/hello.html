@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <title>
+      Lu Han's Page
+    </title>
+  </head>
+
+  <body onload="go()">
+    <h1> Lu Han </h1>
+    <p>Count Down: <b><span id="indicator">  </span></b></p>
+    <input type="button" value="Pause" onclick="pauseTimer()">
+    <input type="button" value="Resume" onclick="resume()">
+
+    <p><br/><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Lovett_Hall.jpg" alt="Lovet_Hall" style="width:400px;height:246px;"></p>
+    <p>Currently I am a graduate student at Rice University. I major in both biochemistry and computer science.</p>
+    <p>Running is my favorite exercise. I am also good at cooking. I like to read tech news in my spare time.</p>
+    <p>I made a trip to Jiuzhaigou, China. The scenery there is very similar to what that I saw in Yellowstone, but more beautiful and has less horrible smell than the geysers in Yellowstone. Many colorful lakes are scattered in that mountain area. I would highly recommend you to pay a visit.
+    <p> <a href="https://www.facebook.com/hanluzju">Here's my personal facebook page.</a> </p>
+    <p>Comments:</p>
+    <textarea id="comments" name="comment" rows="5" cols="100"></textarea><br/>
+    <input type="submit" value="Submit!" onclick="submitcomment()">
+    <input type="button" value="Clear!" onclick="eraseText()">
+  </body>
+
+  <script type="text/javascript">
+		function redirect(){
+			window.location="http://www.clear.rice.edu/comp431/sample/hello.html"
+		}
+
+		function alertmsg(){
+			alert("The page will redirect when the counter reaches zero!")
+		}
+
+		function timer(){
+			var indicator=document.getElementById("indicator")
+			if(parseInt(indicator.innerHTML)>=1){
+				indicator.innerHTML=indicator.innerHTML-1
+			}
+      if(indicator.innerHTML==0){
+              clearInterval(id)
+        redirect()
+      }
+		}
+
+    var id
+  	function go(){
+      document.getElementById("indicator").innerHTML=15
+      setTimeout(alertmsg,5000)
+			id=setInterval(timer,1000)
+  	}
+
+    function pauseTimer(){
+      clearInterval(id)
+      console.log(id)
+    }
+
+    function resume(){
+      id=setInterval(timer,1000)
+      console.log(id)
+    }
+
+  	function eraseText(){
+			document.getElementById("comments").value=""
+    }
+
+  </script>
+
+</html>

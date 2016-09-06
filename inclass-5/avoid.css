@@ -1,0 +1,35 @@
+div {
+	display: none;
+	text-align: center; 
+	font-size: 35px;
+	font-weight: bold;
+	background-color: yellow; 
+	margin: 4em auto;
+	padding:3em 3em;
+	border: purple solid 10px;
+    border-radius: 25px;
+}
+
+.btn {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	margin: 0px auto;
+	display: block;
+	box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #637aad), color-stop(1, #5972a7));
+	background-color:#637aad;
+	border:1px solid #314179;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+}
+
+.btn :hover{
+	color: #ffffff;
+	background-color: #000044;
+	cursor: pointer;
+}

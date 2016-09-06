@@ -23,18 +23,23 @@ window.onload = function() {
 		document.getElementById("congrats").style="display: none"
 		abtn.value="Click Me!"
 		abtn.addEventListener("mouseover", movebtn, false)
+		move()
 	}
 
 	function movebtn(){
 		var abtn=document.getElementById("btn")
 		e=window.event
 		if(!e.shiftKey){
+			move()
+		}
+		console.log("mouse in button area")
+	}
+
+	function move(){
 			var x=500*Math.random()
 			var y=500*Math.random()
 			abtn.style.left=x+'px'
 			abtn.style.top=y+'px'
-		}
-		console.log("mouse in button area")
 	}
 
 }

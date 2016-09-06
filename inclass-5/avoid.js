@@ -16,22 +16,23 @@ window.onload = function() {
 		document.getElementById("congrats").style="display: block;"
 		document.getElementById("btn").value="Restart!"
 		document.getElementById("btn").removeEventListener("mouseover", movebtn)
+		abtn.style="top: 10px; left: 10px"
 	}
 
 	function restart(){
 		document.getElementById("congrats").style="display: none"
-		document.getElementById("btn").value="Click Me!"
-		document.getElementById("btn").addEventListener("mouseover", movebtn, false)
+		abtn.value="Click Me!"
+		abtn.addEventListener("mouseover", movebtn, false)
 	}
 
 	function movebtn(){
 		var abtn=document.getElementById("btn")
 		e=window.event
 		if(!e.shiftKey){
-			var x=300*Math.random()
-			var y=400*Math.random()
-			abtn.style="top: "+x+'px'
-			abtn.style="left: "+y+'px'
+			var x=500*Math.random()
+			var y=500*Math.random()
+			abtn.style.left=x+'px'
+			abtn.style.top=y+'px'
 		}
 		console.log("mouse in button area")
 	}

@@ -1,0 +1,43 @@
+	h1 {text-align: center; 
+		color: #002469; 
+		size: 20; 
+	}
+
+	.content {
+		text-align: left; 
+		background-color: #cceeff; 
+		margin: 1em 1cm;
+	}
+
+	p {
+		text-align: center;
+	}
+
+	button {
+		margin: 0px auto;
+		display: block;
+		box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #637aad), color-stop(1, #5972a7));
+		background-color:#637aad;
+		border:1px solid #314179;
+		cursor:pointer;
+		color:#ffffff;
+		font-family:Arial;
+		font-size:13px;
+		font-weight:bold;
+		padding:6px 12px;
+	}
+
+	button :hover{
+		color: #ffffff;
+		background-color: #000044;
+		cursor: pointer;
+	}
+
+	span {
+		font-weight: bold;
+	}
+
+	table{
+		font: lorem ipsum;
+	}

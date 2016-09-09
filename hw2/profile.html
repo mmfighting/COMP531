@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+	<title>User Profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<script src="profile.js"></script>
+</head>
+
+<body>
+	<h1>Personal Profile</h1>
+	<div class="info" name="info">
+		<span name="title">Display name</span>
+		<input type="text" name="name" size=30 pattern="^[A-Za-z][A-Za-z0-9]+$" placeholder="name">
+		<span name="old">John Doe</span>
+	</div>
+	<div class="info" name="info">
+		<span name="title">Email Address</span>
+		<input type="email" name="email" size=30 pattern="[A-Za-z0-9]+@[A-Za-z0-9]+[.][A-Za-z0-9]+" placeholder="***@***.***" >
+		<span name="old">john.doe@rice.edu</span>
+	</div>
+	<div class="info" name="info">
+		<span name="title">Phone Number</span>
+		<input type="tel" name="tel" size=30 pattern="^\d{3}-\d{3}-\d{4}$" placeholder="###-###-####">
+		<span name="old">123-456-7890</span>
+	</div>
+	<div class="info" name="info">
+		<span name="title">Zip Code</span>
+		<input type="number" name="zipcode" size=30 pattern="^\d{5}$" placeholder="#####">
+		<span name="old">77005</span>
+	</div>
+	<div class="info" name="info">
+		<span name="title">Password</span>
+		<input type="password" name="password" size=30 placeholder="Enter your new password here">
+		<span name="old">abcABC123</span>
+	</div>
+	<div class="info" name="info">
+		<span name="title">Password Confirmation</span>
+		<input type="password" name="password2" size=30 placeholder="Re-enter your new password">
+		<span name="old"></span>
+	</div>
+	<p>
+		<button id="update">Update!</button>
+	</p>
+	<p>
+		<a href="main.html">Return to Main Page</a>
+	</p>
+
+</body>
+</html>

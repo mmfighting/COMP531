@@ -24,22 +24,25 @@ window.onload = function() {
 				}
 			}
 		})
-		
+
 		var pass1=infos[4].getElementsByTagName("input")[0].value
 		var pass2=infos[5].getElementsByTagName("input")[0].value
+		if(pass1!=pass2){
+			window.alert("Your passwords do not match!")
+			state=false
+		}
+		if((pass1!='')&&(pass1===pass2)){
+			message.push("Your password has been updated!\n")
+			var pw=infos[4].getElementsByTagName("span")[1]
+			while(pw.firstChild){
+					pw.removeChild(pw.firstChild)
+				}
+			pw.appendChild(document.createTextNode(pass1))
+			infos[4].getElementsByTagName("input")[0].value=''
+			infos[5].getElementsByTagName("input")[0].value=''
+		}
+
 		if(state){
-
-			if((pass1!='')&&(pass1===pass2)){
-				message.push("Your password has been updated!\n")
-				var pw=infos[4].getElementsByTagName("span")[1]
-				while(pw.firstChild){
-						pw.removeChild(pw.firstChild)
-					}
-					pw.appendChild(document.createTextNode(pass1))
-				infos[4].getElementsByTagName("input")[0].value=''
-				infos[5].getElementsByTagName("input")[0].value=''
-			}
-
 			infos.forEach(function(information){
 				var inputTag=information.getElementsByTagName("input")[0]
 				var input=inputTag.value

@@ -1,0 +1,85 @@
+body {
+    padding-top: 50px;
+}
+
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #002469;
+}
+
+.content {
+    text-align: left;
+    background-color: #cceeff;
+    margin: 1em 1cm;
+}
+
+button {
+    margin: 0px auto;
+    display: block;
+    box-shadow: inset 0px 1px 0px 0px #7a8eb9;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #637aad), color-stop(1, #5972a7));
+    background-color: #637aad;
+    border: 1px solid #314179;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button :hover {
+    color: #ffffff;
+    background-color: #000044;
+    cursor: pointer;
+}
+
+span {
+    font-weight: bold;
+}
+
+table {
+    background-color: white;
+    border: 3px solid #314179;
+    border-radius: 20px;
+    width: 100%;
+}
+
+[name="title"] {
+    position: absolute;
+    margin-left: 320px;
+    padding-bottom: 10px;
+}
+
+[name="old"] {
+    position: absolute;
+    margin-left: 700px;
+}
+
+#login_form {
+    padding: 20px;
+}
+
+#logout {
+    float: right;
+    margin-right: 100px;
+    margin-bottom: 20px;
+}
+
+#profile {
+    float: left;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+
+#newpost {
+    width: 40em;
+    height: 10em;
+}

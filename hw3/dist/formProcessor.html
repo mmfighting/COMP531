@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="luhan">
+    <title>
+        Registration Result
+    </title>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    </style>
+</head>
+
+<body>
+<h1> Registration Result </h1>
+<table>
+    <tr>
+        <td>Account name</td>
+        <td id="acc_name">  </td>
+    </tr>
+    <tr>
+        <td>Display name</td>
+        <td id="disp_name"> </td>
+    </tr>
+    <tr>
+        <td>Email Address</td>
+        <td id="email"> </td>
+    </tr>
+    <tr>
+        <td>Phone</td>
+        <td id="phone"> </td>
+    </tr>
+    <tr>
+        <td>Date of Birth</td>
+        <td id="dob"> </td>
+    </tr>
+    <tr>
+        <td>Zip Code</td>
+        <td id="zipcode"> </td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td id="password"> </td>
+    </tr>
+    <tr>
+        <td>Registration Time</td>
+        <td id="timestamp"> </td>
+    </tr>
+</table>
+</body>
+<script type="text/javascript">
+      document.getElementById("acc_name").innerHTML=decodeURIComponent(window.location.href.split('?')[1].split('&')[0].split('=')[1]);
+      document.getElementById("disp_name").innerHTML=decodeURIComponent(window.location.href.split('?')[1].split('&')[1].split('=')[1]);
+      document.getElementById("email").innerHTML=decodeURIComponent(window.location.href.split('?')[1].split('&')[2].split('=')[1]);
+      document.getElementById("phone").innerHTML=decodeURIComponent(window.location.href.split('?')[1].split('&')[3].split('=')[1]);
+      document.getElementById("dob").innerHTML=decodeURIComponent(window.location.href.split('?')[1].split('&')[4].split('=')[1]);
+      document.getElementById("zipcode").innerHTML=decodeURIComponent(window.location.href.split('?')[1].split('&')[5].split('=')[1]);
+      document.getElementById("password").innerHTML=decodeURIComponent(window.location.href.split('?')[1].split('&')[6].split('=')[1]);
+      document.getElementById("timestamp").innerHTML=decodeURIComponent(window.location.href.split('?')[1].split('&')[8].split('=')[1]).replace(/\+/g," ");
+  </script>
+</html>

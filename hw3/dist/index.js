@@ -31,3 +31,21 @@ function validation(form) {
         return true
     }
 }
+
+function login_validation(){
+    //console.log("username: ", document.getElementById("login_username").value)
+    //console.log("password: ", document.getElementById("login_password").value)
+    if(document.getElementById("login_username").value===""){
+        window.alert("Please enter a username!")
+    }else if(document.getElementById("login_password").value==="") {
+        window.alert("Please enter a password!")
+    }else {
+        window.location = "main.html"
+        return true
+    }
+}
+
+function reset_login(){
+    document.getElementById("login_username").value=""
+    document.getElementById("login_password").value=""
+}

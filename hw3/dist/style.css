@@ -1,89 +1,83 @@
-body {
-    padding-top: 50px;
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+    margin-top: 60px
+}
+.following{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.btn-sm{
+    float: right;
 }
 
-.starter-template {
-    padding: 40px 15px;
-    text-align: center;
+.friend{
+    font-size: medium;
+    font-weight: bold;
+    color: #2b669a
 }
 
-h1 {
-    text-align: center;
+.status{
+    font-family: 'Comic Sans MS';
+    font-weight: bold;
     color: #002469;
 }
-
 h3{
-
+    text-align: center;
+    font-size: 3vw;
 }
 
-.content {
-    text-align: left;
-    background-color: #cceeff;
-    margin: 1em 1cm;
+textarea{
+    margin: 8px;
 }
-
-button {
-    margin: 0px auto;
-    display: block;
-    box-shadow: inset 0px 1px 0px 0px #7a8eb9;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #637aad), color-stop(1, #5972a7));
-    background-color: #637aad;
-    border: 1px solid #314179;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 13px;
+.img-responsive{
+    margin-bottom: 8px;
+    max-width: 90%;
+}
+.emoji{
+    width: 40px;
+}
+.content{
+    margin: 10px;
+}
+.time{
+    color: #8c8c8c;
+}
+#display_info {
+    font-size: large;
     font-weight: bold;
-    padding: 6px 12px;
+    margin-left: 10%;
+}
+
+[name=currentprofile_col] {
+    background-color: #00b3ee;
+    margin-right: 20px;
+}
+
+[name=updateprofile_col] {
+    background-color: #e7c3c3;
+
+}
+
+[name=update_info] {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.btn-md {
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
-button :hover {
-    color: #ffffff;
-    background-color: #000044;
-    cursor: pointer;
+input[type=file] {
+    display: none;
 }
 
-span {
-    font-weight: bold;
+img[name=ricelogo]{
+    margin: -10px;
+    height: 80px;
 }
 
-table {
-    background-color: white;
-    border: 3px solid #314179;
-    border-radius: 20px;
-    width: 100%;
-}
-
-[name="title"] {
-    position: absolute;
-    margin-left: 320px;
-    padding-bottom: 10px;
-}
-
-[name="old"] {
-    position: absolute;
-    margin-left: 700px;
-}
-
-#login_form {
-    padding: 20px;
-}
-
-#logout {
-    float: right;
-    margin-right: 100px;
-    margin-bottom: 20px;
-}
-
-#profile {
-    float: left;
-    margin-left: 100px;
-    margin-bottom: 20px;
-}
-
-#newpost {
-    width: 40em;
-    height: 10em;
+body{
+    background-image: url("http://images.freepicturesweb.com/img1/05/02/43.jpg");
 }

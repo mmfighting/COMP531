@@ -10,14 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="profile.js"></script>
-    <style>
-        /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-            color: white;
-            padding: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -30,35 +23,38 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img class="navbar-brand" src="rice-logo.jpg">
-            <a class="navbar-brand" href="#">RiceBook</a>
+            <img class="navbar-brand" name="ricelogo" src="rice_owls.png">
+            <a class="navbar-brand" href="main.html">RiceBook</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="profile.html">My Account</a></li>
+                <li class="active"><a href="main.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
                 <li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Log Out!</a></li>
             </ul>
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group input-group">
                     <input type="text" class="form-control" placeholder="Search..">
                     <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
                 </div>
+            </form>
         </div>
+    </div>
 </nav>
 <div class="container">
-    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="background-color: #00b3ee;margin-right: 20px;">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" name="currentprofile_col">
         <div align="center">
             <h2>Current Profile</h2>
-            <img src="profile.jpg" style="max-width: 70%; max-height: 30%;margin-bottom: 7px;"><br/>
+            <img src="profile.jpg" class="img-responsive"><br/>
             <label class="btn btn-warning btn-file">
-                Upload new picture! <input type="file" style="display: none;">
+                Upload new picture! <input type="file">
             </label>
         </div>
-        <div id="display_info" align="left" style="font-size: large; font-weight: bold; margin-left: 10%;">
+        <div id="display_info" align="left">
             <div class="disp">
                 <span>John Doe</span>
             </div>
@@ -82,9 +78,9 @@
 
     </div>
 
-    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="background-color: #e7c3c3;">
+    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" name="updateprofile_col">
         <h2 align="center">Update Profile Information</h2>
-        <div name="update_info" style="font-size: medium; font-weight: bold;">
+        <div name="update_info">
             <div name="update">
                 <span>Display name  </span><br/>
                 <input type="text" name="name" size=30 pattern="^[A-Za-z][A-Za-z0-9]+$" placeholder="name"><br/>
@@ -95,15 +91,15 @@
                        placeholder="***@***.***"><br/>
             </div>
             <div name="update">
-                Phone Number  <br/>
+                Phone Number <br/>
                 <input type="tel" name="tel" size=30 pattern="^\d{3}-\d{3}-\d{4}$" placeholder="###-###-####"><br/>
             </div>
             <div name="update">
-                Zip Code      <br/>
+                Zip Code <br/>
                 <input type="number" name="zipcode" size=30 pattern="^\d{5}$" placeholder="#####"><br/>
             </div>
             <div name="update">
-                Password      <br/>
+                Password <br/>
                 <input type="password" name="password" size=30 placeholder="Enter your new password here"><br/>
             </div>
             <div name="update">
@@ -112,13 +108,13 @@
             </div>
         </div>
         <p align="center">
-            <button class="btn btn-success" id="update" style="margin-top: 10px;">Update!</button>
+            <button class="btn btn-md btn-success" id="update">Update!</button>
         </p>
     </div>
 </div>
+
 <footer class="container-fluid text-center">
     <p>All rights reserved @LuHan</p>
 </footer>
 
 </body>
-</html>

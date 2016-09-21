@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img class="navbar-brand" name="ricelogo" src="rice_owls.png">
+            <img class="navbar-brand" name="ricelogo" src="img/rice_owls.png">
             <a class="navbar-brand" href="main.html">RiceBook</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -49,7 +49,7 @@
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" name="currentprofile_col">
         <div align="center">
             <h2>Current Profile</h2>
-            <img src="profile.jpg" class="img-responsive"><br/>
+            <img src="img/profile.jpg" class="img-responsive"><br/>
             <label class="btn btn-warning btn-file">
                 Upload new picture! <input type="file">
             </label>
@@ -82,29 +82,38 @@
         <h2 align="center">Update Profile Information</h2>
         <div name="update_info">
             <div name="update">
-                <span>Display name  </span><br/>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                      title="Use A-Z, a-z, 0-9 are allowed. Can't start with digit. Name length bigger than 2"> Display name</a><br/>
                 <input type="text" name="name" size=30 pattern="^[A-Za-z][A-Za-z0-9]+$" placeholder="name"><br/>
+                <span class="notification"> Wrong Format! </span><br/>
             </div>
             <div name="update">
-                Email Address <br/>
+                <a href="#" data-toggle="tooltip" data-placement="right" title="***@***.****">Email Address</a> <br/>
                 <input type="email" name="email" size=30 pattern="[A-Za-z0-9]+@[A-Za-z0-9]+[.][A-Za-z0-9]+"
                        placeholder="***@***.***"><br/>
+                <span class="notification"> The email your entered is not valid </span><br/>
             </div>
             <div name="update">
-                Phone Number <br/>
+                <a href="#" data-toggle="tooltip" data-placement="right" title="###-###-####">Phone Number</a> <br/>
                 <input type="tel" name="tel" size=30 pattern="^\d{3}-\d{3}-\d{4}$" placeholder="###-###-####"><br/>
+                <span class="notification"> Wrong Format! </span><br/>
             </div>
             <div name="update">
-                Zip Code <br/>
+                <a href="#" data-toggle="tooltip" data-placement="right" title="###-###-####">Zip Code</a> <br/>
                 <input type="number" name="zipcode" size=30 pattern="^\d{5}$" placeholder="#####"><br/>
+                <span class="notification"> Wrong Format! </span><br/>
             </div>
             <div name="update">
-                Password <br/>
+                <a href="#">Password </a><br/>
                 <input type="password" name="password" size=30 placeholder="Enter your new password here"><br/>
+                <span class="notification"></span>
             </div>
             <div name="update">
-                Password Confirmation <br/>
+                <a href="#">Password Confirmation</a> <br/>
                 <input type="password" name="password2" size=30 placeholder="Re-enter your new password"><br/>
+                <span class="notification"> The passwords you entered do not match! </span>
+                <span class="notification"> Your password has been updated </span>
+                <br/>
             </div>
         </div>
         <p align="center">

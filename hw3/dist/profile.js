@@ -1,54 +1,58 @@
+/**
+ * Created by Lu on 9/20/16.
+ */
 'use strict'
 window.onload = function() {
 
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
     document.getElementById("update").onclick=function(){
         var infos=document.getElementsByName("update")
-        var message=[]
         var state=true
         //this loop checks for format of inputs, except for password
         infos.forEach(function(information){
-            var intputEntry=information.getElementsByTagName("input")[0]
-            //console.log(intputEntry)
-            var input=intputEntry.value
-            if ((input!='')&& (intputEntry.type!="password")){
-                var re=new RegExp(intputEntry.pattern)
+            var inputEntry=information.getElementsByTagName("input")[0]
+            var notification=information.getElementsByTagName("span")[0]
+            var notification2=information.getElementsByTagName("span")[1]
+            if(notification2){
+                notification2.style="display: none"
+            }
+            notification.style="display: none"
+            var input=inputEntry.value
+            if ((input!='')&& (inputEntry.type!="password")){
+                var re=new RegExp(inputEntry.pattern)
                 //if input does not match required format, alert the user
                 if(!re.test(input)){
                     state=false
-                    message=[]
-                    window.alert("Your input for "+ intputEntry.name+" does NOT match the required format!")
-                }else{
-                    //if input format is correct, add a message for later
-                    if(intputEntry.type!='password'){
-                        message.push("Your "+intputEntry.name+" has been updated!\n")
-                    }
+                    notification.style="display: block;"
+                    //window.alert("Your input for "+ inputEntry.name+" does NOT match the required format!")
                 }
             }
         })
-        console.log(infos)
+
+
+        //validate password inputs
         var pass1=infos[4].getElementsByTagName("input")[0].value
         var pass2=infos[5].getElementsByTagName("input")[0].value
         if(pass1!=pass2){
-            window.alert("Your passwords do not match!")
+            infos[5].getElementsByTagName("span")[0].style="display:block"
             state=false
         }
         if((pass1!='')&&(pass1===pass2)){
-            message.push("Your password has been updated!\n")
-            var pw=infos[4].getElementsByTagName("span")[1]
-            while(pw.firstChild){
-                pw.removeChild(pw.firstChild)
-            }
-            pw.appendChild(document.createTextNode(pass1))
+            infos[5].getElementsByTagName("span")[1].style="display:block"
             infos[4].getElementsByTagName("input")[0].value=''
             infos[5].getElementsByTagName("input")[0].value=''
         }
 
+        //if all inputs have correct format, then update them in the display field.
         if(state){
             infos.forEach(function(information){
                 var inputEntry=information.getElementsByTagName("input")[0]
                 var input=inputEntry.value
                 var t=document.getElementsByClassName("disp")
-                console.log(t)
+                //update the field with non-empty input except for password!
                 if(input!=''){
                     var index
                     if (inputEntry.type=="text"){
@@ -68,7 +72,6 @@ window.onload = function() {
                     inputEntry.value=''
                 }
             })
-            //window.alert(message)
         }
 
     }

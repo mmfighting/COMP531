@@ -21,14 +21,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img class="navbar-brand" name="ricelogo" src="rice_owls.png">
+            <img class="navbar-brand" name="ricelogo" src="img/rice_owls.png">
             <a class="navbar-brand" href="main.html">RiceBook</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="main.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
-                <li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Log Out!</a></li>
+                <li class="active"><a href="main.html"><span class="glyphicon glyphicon-home"></span><span class="text"> Home </span></a></li>
+                <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span><span class="text"> My Account </span></a></li>
+                <li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span><span class="text"> Log Out! </span></a></li>
             </ul>
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group input-group">
@@ -50,31 +50,31 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
             <div class="well">
                 <a href="profile.html"><h3>John Doe</h3></a>
-                <img src="profile.jpg" class="img-responsive img-rounded" alt="profilephoto">
-                <div class="status">
+                <img src="img/profile.jpg" class="img-responsive img-rounded" alt="profilephoto">
+                <div class="status" id="disp_status">
                     I am trying bootstrap framework out!
                 </div>
-                <input type="text">
-                <button class="btn btn-info" id="statusupdate">Update!</button>
+                <input type="text" id="statusinput">
+                <button class="btn btn-info btn-md" id="status_update">Update</button>
             </div>
 
             <div class="well">
                 <h3> Following:</h3>
                 <div class="follow">
                     <div class="following">
-                        <img src="girl1.jpg" height="30" width="30">
+                        <img src="img/girl1.jpg" height="30" width="30">
                         <a class="friend" href="#">Mary Doe</a>
                         <button class="btn btn-sm btn-danger">Unfollow</button>
                         <p class="status">I miss my cat!</p>
                     </div>
                     <div class="following">
-                        <img src="boy1.jpg" height="30" width="30">
+                        <img src="img/boy1.jpg" height="30" width="30">
                         <a class="friend" href="#">Mat Goldman</a>
                         <button class="btn btn-sm btn-danger">Unfollow</button>
                         <p class="status">Let's rock!</p>
                     </div>
                     <div class="following">
-                        <img src="boy2.jpg" height="30" width="30">
+                        <img src="img/boy2.jpg" height="30" width="30">
                         <a class="friend" href="#">Mike Wallace</a>
                         <button class="btn btn-sm btn-danger">Unfollow</button>
                         <p class="status">Oh, web dev.</p>
@@ -82,27 +82,27 @@
                 </div>
             </div>
             <div class="well">
-                <input type="text">
-                <button class="btn btn-info">Add user</button>
+                <input type="text" name="adduserinput">
+                <button class="btn btn-info btn-md">Add user</button>
             </div>
         </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="well">
                 <h3>News Feed</h3>
                 <div class="form-group">
-                    <textarea class="form-control" id="post" placeholder="What's on your mind?"></textarea>
+                    <textarea class="form-control" id="newsinput" placeholder="What's on your mind?"></textarea>
                     <p align="right">
                         <label class="btn btn-warning btn-file">
                             Add Image <input type="file" style="display: none;">
                         </label>
-                        <button class="btn btn-primary" id="postbtn">Post !</button>
-                        <input class="btn btn-default" type="reset" id="cancelbtn" value="Cancel !">
+                        <button class="btn btn-primary" id="postbtn">Post</button>
+                        <input class="btn btn-default" type="reset" id="cancelbtn" value="Cancel ">
                     </p>
                 </div>
             </div>
 
             <div class="well" id="post1">
-                <img src="girl1.jpg" height="30" width="30">
+                <img src="img/girl1.jpg" height="30" width="30">
                 <span class="friend">Mary Doe</span>
                 <span class="time">10 minutes ago</span>
                 <button class="btn btn-sm btn-success">Edit</button>
@@ -114,13 +114,13 @@
                     culpa qui
                     officia deserunt mollit anim id est laborum.
                 </div>
-                <div class="comment">
+                <div class="comment input-group">
                     <input type="text" placeholder="Comments">
-                    <input type="button" class="btn btn-sm btn-info" size="100" value="Comment!">
+                    <input type="button" class="btn btn-sm btn-info" size="100" value="Comment">
                 </div>
             </div>
             <div class="well" id="post2">
-                <img src="boy2.jpg" height="30" width="30">
+                <img src="img/boy2.jpg" height="30" width="30">
                 <span class="friend">Mike Wallace</span>
                 <span class="time">1 hour ago</span>
                 <button class="btn btn-sm btn-success">Edit</button>
@@ -129,27 +129,27 @@
                          class="img-responsive img-rounded"><br/>
                     <p> I am watching you!</p>
                 </div>
-                <div class="comment">
+                <div class="comment input-group">
                     <input type="text" placeholder="Comments">
-                    <input type="button" class="btn btn-sm btn-info" size="100" value="Comment!">
+                    <input type="button" class="btn btn-sm btn-info" value="Comment">
                 </div>
             </div>
             <div class="well" id="post3">
-                <img src="boy1.jpg" height="30" width="30">
+                <img src="img/boy1.jpg" height="30" width="30">
                 <span class="friend">Mat Goldman</span>
                 <span class="time">2 hours ago</span>
                 <button class="btn btn-sm btn-success">Edit</button>
                 <div class="content">
-                    <img src="concert.jpg" class="img-responsive img-rounded"><br/>
+                    <img src="img/concert.jpg" class="img-responsive img-rounded"><br/>
                     <p> Great concert!</p>
                 </div>
-                <div class="comment">
+                <div class="comment input-group">
                     <input type="text" placeholder="Comments">
-                    <input type="button" class="btn btn-sm btn-info" size="100" value="Comment!">
+                    <input type="button" class="btn btn-sm btn-info" value="Comment">
                 </div>
             </div>
             <div class="well" id="post4">
-                <img src="boy2.jpg" height="30" width="30">
+                <img src="img/boy2.jpg" height="30" width="30">
                 <span class="friend">Mike Wallace</span>
                 <span class="time">2 hours ago</span>
                 <button class="btn btn-sm btn-success">Edit</button>
@@ -158,13 +158,13 @@
                          class="img-responsive img-rounded"><br/>
                     <p> This pic reminds me of John.....</p>
                 </div>
-                <div class="comment">
+                <div class="comment input-group">
                     <input type="text" placeholder="Comments">
-                    <input type="button" class="btn btn-sm btn-info" size="100" value="Comment!">
+                    <input type="button" class="btn btn-sm btn-info" value="Comment">
                 </div>
             </div>
             <div class="well" id="post5">
-                <img src="girl1.jpg" height="30" width="30">
+                <img src="img/girl1.jpg" height="30" width="30">
                 <span class="friend">Mary Doe</span>
                 <span class="time">6 hours ago</span>
                 <button class="btn btn-sm btn-success">Edit</button>
@@ -173,26 +173,26 @@
                          class="img-responsive img-rounded"><br/>
                     <p> Any one wants to join me at Crabs for dinner today?</p>
                 </div>
-                <div class="comment">
+                <div class="comment input-group">
                     <input type="text" placeholder="Comments">
-                    <input type="button" class="btn btn-sm btn-info" size="100" value="Comment!">
+                    <input type="button" class="btn btn-sm btn-info" value="Comment">
                 </div>
             </div>
             <div class="well" id="post6">
-                <img src="boy1.jpg" height="30" width="30">
+                <img src="img/boy1.jpg" height="30" width="30">
                 <span class="friend">Mat Goldman</span>
                 <span class="time">8 hours ago</span>
                 <button class="btn btn-sm btn-success">Edit</button>
                 <div class="content">
                     <p>So excited for the concert!</p>
                 </div>
-                <div class="comment">
+                <div class="comment input-group">
                     <input type="text" placeholder="Comments">
-                    <input type="button" class="btn btn-sm btn-info" size="100" value="Comment!">
+                    <input type="button" class="btn btn-sm btn-info" value="Comment">
                 </div>
             </div>
             <div class="well" id="post7">
-                <img src="girl1.jpg" height="30" width="30">
+                <img src="img/girl1.jpg" height="30" width="30">
                 <span class="friend">Mary Doe</span>
                 <span class="time">1 day ago</span>
                 <button class="btn btn-sm btn-success">Edit</button>
@@ -201,13 +201,13 @@
                          class="img-responsive img-rounded"><br/>
                     <p> Today's brunch with John!!! Yummy! </p>
                 </div>
-                <div class="comment">
+                <div class="comment input-group">
                     <input type="text" placeholder="Comments">
-                    <input type="button" class="btn btn-sm btn-info" size="100" value="Comment!">
+                    <input type="button" class="btn btn-sm btn-info" value="Comment">
                 </div>
             </div>
             <div class="well" id="post8">
-                <img src="boy1.jpg" height="30" width="30">
+                <img src="img/boy1.jpg" height="30" width="30">
                 <span class="friend">Mat Goldman</span>
                 <span class="time">1 day ago</span>
                 <button class="btn btn-sm btn-success">Edit</button>
@@ -216,9 +216,9 @@
                          class="emoji"><br/>
                     <p>HELP!!!! Help needed with web development hw3.</p>
                 </div>
-                <div class="comment">
+                <div class="comment input-group">
                     <input type="text" placeholder="Comments">
-                    <input type="button" class="btn btn-sm btn-info" size="100" value="Comment!">
+                    <input type="button" class="btn btn-sm btn-info" value="Comment">
                 </div>
             </div>
         </div>

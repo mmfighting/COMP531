@@ -81,3 +81,19 @@ img[name=ricelogo]{
 body{
     background-image: url("http://images.freepicturesweb.com/img1/05/02/43.jpg");
 }
+
+#statusinput {
+    width: 100%;
+    padding: 0px;
+}
+
+input[name=adduserinput]{
+    width: 100%;
+    padding: 0px;
+}
+
+span[class=notification]{
+    font-weight: normal;
+    color: #cc0000;
+    display: none;
+}

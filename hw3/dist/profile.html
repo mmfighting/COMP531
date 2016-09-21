@@ -56,6 +56,7 @@
         </div>
         <div id="display_info" align="left">
             <div class="disp">
+                Display name:
                 <span>John Doe</span>
             </div>
             <div class="disp">
@@ -83,8 +84,8 @@
         <div name="update_info">
             <div name="update">
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                      title="Use A-Z, a-z, 0-9 are allowed. Can't start with digit. Name length bigger than 2"> Display name</a><br/>
-                <input type="text" name="name" size=30 pattern="^[A-Za-z][A-Za-z0-9]+$" placeholder="name"><br/>
+                      title="Use A-Z, a-z, 0-9 and space are allowed. Can't start with digit. Name length bigger than 2"> Display name</a><br/>
+                <input type="text" name="name" size=30 pattern="^[A-Za-z][A-Za-z0-9 ]+$" placeholder="name"><br/>
                 <span class="notification"> Wrong Format! </span><br/>
             </div>
             <div name="update">

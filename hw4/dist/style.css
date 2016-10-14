@@ -1,0 +1,28 @@
+canvas {
+    background-image: url("img/kitchen5.png");
+}
+
+.content {
+    margin: 10px;
+}
+
+input[type=file] {
+    display: none;
+}
+
+span[class=item] {
+    font-weight: normal;
+    color: #002469;
+    font-size: large;
+}
+span[class=important]{
+    font-size: large;
+    font-weight: bolder;
+    color: #cc0000;
+}
+
+.panel-heading {
+    color: #000;
+    font-size: large;
+    font-weight: bolder;
+}

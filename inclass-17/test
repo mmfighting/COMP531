@@ -1,0 +1,35 @@
+#!/bin/bash
+PORT=3000
+
+echo "GET /headlines/:user?"
+curl -X GET -H 'Content-Type: application/json' http://localhost:3000/headlines/:user?
+echo ""
+
+echo "PUT /headline"
+curl -X PUT http://localhost:3000/headline -H 'Content-Type: application/json' -d '{"headline":"this!"}'
+echo ""
+
+echo "GET /email/:user?"
+curl -X GET -H 'Content-Type: application/json' http://localhost:3000/email/:user?
+echo ""
+
+echo "PUT /email"
+curl -X PUT http://localhost:3000/email -H 'Content-Type: application/json' -d '{"email":"this@!"}'
+echo ""
+
+echo "GET /zipcode"
+curl -X GET -H 'Content-Type: application/zipcode' http://localhost:3000/zipcode/:user?
+echo ""
+
+echo "PUT /zipcode"
+curl -X PUT http://localhost:3000/zipcode -H 'Content-Type: application/json' -d '{"zipcode":"this!"}'
+echo ""
+
+echo "GET /avatars"
+curl -X GET -H 'Content-Type: application/json' http://localhost:3000/avatars/:user?
+echo ""
+
+echo "PUT /avatar"
+curl -X PUT http://localhost:3000/avatar -H 'Content-Type: application/json' -d '{"avatar":"this!"}'
+echo ""
+

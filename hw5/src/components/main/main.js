@@ -1,7 +1,4 @@
 import React from 'react'
-import Headline from './headline'
-import Following from './following'
-import ArticlesView from '../article/articlesView'
 
 const Main = () => (
     // This is the main view.
@@ -10,10 +7,11 @@ const Main = () => (
     // and their list of followers.
     <div className="row">
         <div className="col-sm-3">
-            <Headline/>
-            <Following/>
+            This is Main page
+            Headline!
+            Following!
         </div>
-        <ArticlesView/>
+        articles view!
     </div>
 )
 

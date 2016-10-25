@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import Action, { resource, updateError, updateSuccess, navToMain, navToOut, apiUrl } from '../../actions'
+import {localLogin} from './authActions'
 
 const Login = ({dispatch})=> {
     let username, password
@@ -15,7 +15,8 @@ const Login = ({dispatch})=> {
                 <b>Password</b><br/>
                 <input type="password" id="index_login_password" />
             </p>
-            <input type="submit" className="btn-success" id="index_login_btn" value="Log In!" onClick={() => {dispatch(navToMain())}} />
+            <input type="submit" className="btn-success" id="index_login_btn" value="Log In!" onClick={() => {dispatch(localLogin(username.value, password.value))}} />
+            <input type="reset" className="btn-default" value="Clear!" onClick={()=>{dispatch(clearInput)}}/>
         </div>
     )
 }

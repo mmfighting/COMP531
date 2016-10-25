@@ -1,18 +1,20 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
 import Login from './login'
 import Register from './register'
 
-const Index=()=>(
+
+const Landing = () => (
     <div>
-        <div class="container">
-            <div class="jumbotron" align="center">
+        <div className="container">
+            <div className="jumbotron text-center">
                 <h1>Welcome to RiceBook!</h1>
             </div>
+            Message
+            <Login />
+            <Register />
         </div>
-
-        <Login />
-        <Register />
     </div>
 )
 
-export default Index
+export default Landing

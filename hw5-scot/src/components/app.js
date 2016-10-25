@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import Nav from './main/nav'
 import Main from './main/main'
 import Landing from './auth/landing'
 import Profile from './profile/profile'
-import Nav from './main/nav'
 
 const App = ({location}) => {
 

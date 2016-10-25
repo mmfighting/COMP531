@@ -1,6 +1,7 @@
-/**
- * Created by lh11 on 10/14/16.
- */
+require('expose?$!expose?jQuery!jquery')
+require("bootstrap-webpack")
+require('./style.css')
+
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'

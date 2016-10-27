@@ -21,11 +21,11 @@ class NewArticle extends Component {
 
     render() { return (
         <div>
-            <div className="row">
-                <div className="col-sm-12">
-                    <div>Say something...</div>
+            <div className="well">
+                <div>
+                    <h5>Post something:</h5>
                     <textarea class="newPostBody"
-                              cols="80" rows="4" placeholder="share what's new..."
+                              cols="80" rows="4" placeholder="Anything interesting"
                               value={ this.message }
                               onChange={(e) => {
                                   this.message = e.target.value
@@ -33,17 +33,13 @@ class NewArticle extends Component {
                               }}>
                     </textarea>
                 </div>
-            </div>
-
-            <div className="row">
-                <div className="col-sm-5">
-                    Add a picture
-                    <input type="file" id="articleImage" accept="image/*" onChange={(e) => this.handleImageChange(e)}/>
+                <div>
+                    Add a image<input type="file" id="articleImage" accept="image/*" onChange={(e) => this.handleImageChange(e)}/>
                 </div>
                 { !this.file && !this.message ? '' :
-                    <div className="col-sm-2">
+                    <div>
                         <div className="text-right">
-                            <input className="btn btn-primary" type="button" value="Publish it"
+                            <input className="btn btn-info" type="button" value="Publish new article"
                                    onClick={() => {
                                        this.props.dispatch(uploadArticle(this.message, this.file))
                                        this.message = ''

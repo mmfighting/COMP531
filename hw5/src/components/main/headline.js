@@ -9,10 +9,8 @@ class Headline extends Component {
             <div>
                 <div className="well text-center">
                     <h3 id="username">{this.props.username}</h3>
-                    <img className="img-responsive img-rounded" style={{
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }} src={this.props.avatar}/>
+                    <img className="img-responsive img-rounded centerImg"
+                        src={this.props.avatar}/>
                     <h4 id="headline">{this.props.headline}</h4>
                     <input className="form-control" id="headline" type="text"
                            placeholder="update your headline"

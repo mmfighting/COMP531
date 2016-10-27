@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { navToMain, navToProfile, navToOut } from '../../actions'
+import { navToMain, navToProfile } from '../../actions'
+import {logout} from '../auth/authActions'
 
 
 const Nav = ({username, onProfile, dispatch}) => (
-    <nav className="navbar navbar-reverse">
+    <nav className="navbar navbar-inverse">
         <div className="container-fluid">
             <div className="navbar-header">
                 <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
@@ -17,9 +18,18 @@ const Nav = ({username, onProfile, dispatch}) => (
             </div>
             <div className="nav navbar-nav navbar-right">
                 <ul className="nav navbar-nav">
-                    <li><a href="#" onClick={() => { dispatch(navToMain()) }}><span className="glyphicon glyphicon-home"/>Home</a></li> :
-                    <li><a href="#" onClick={() => { dispatch(navToProfile()) }}><span className="glyphicon glyphicon-user"/>Edit Your Profile</a></li>
-                    <li><a href="#" onClick={() => { dispatch(navToOut()) }}><span className="glyphicon glyphicon-log-out"/>Log out {username} </a></li>
+                    { username.length == 0 ? '' :
+                        <div className="nav navbar-nav navbar-right">
+                            <ul className="nav navbar-nav">
+                                { onProfile ?
+                                    <li><a href="#" onClick={() => { dispatch(navToMain()) }}><span className="glyphicon glyphicon-home"/>Home</a></li> :
+                                    <li><a href="#" onClick={() => { dispatch(navToProfile()) }}><span className="glyphicon glyphicon-user"/>Edit Profile</a></li>
+                                }
+                                <li><a href="#" onClick={() => { dispatch(logout()) }}><span className="glyphicon glyphicon-log-out"/>Log out {username} </a></li>
+                                <li>&nbsp;</li>>
+                            </ul>
+                        </div>
+                    }
                 </ul>
             </div>
         </div>

@@ -7,7 +7,7 @@ const Follower = ({name, avatar, headline, dispatch}) => (
     <div name="follower">
         <div>&nbsp;</div>
         <div className="media-left">
-            <img className="followingImage" style={{width: 50}} src={ avatar }/>
+            <img className="followingImage" src={ avatar }/>
         </div>
         <div className="media-body">
             <div><h5 color="#02307a">{ name }</h5></div>

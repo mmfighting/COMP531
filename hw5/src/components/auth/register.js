@@ -3,9 +3,10 @@ import { connect } from 'react-redux'
 
 class Register extends Component {
 
+
     render() { return (
         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <h2>Register a new account</h2>
+            <h2>Register</h2>
             <form  id="registration_form">
                 <div className="form-group row">
                     <label className="col-sm-3 form-control-label" >Username</label>

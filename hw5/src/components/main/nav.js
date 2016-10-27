@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { navToMain, navToProfile } from '../../actions'
-import {logout} from '../auth/authActions'
+import { logout } from '../auth/authActions'
 
 
 const Nav = ({username, onProfile, dispatch}) => (

@@ -24,7 +24,8 @@ const Action = {
     NAV_MAIN: 'NAV_MAIN',
     NAV_OUT: 'NAV_OUT',
 
-    LOGIN_LOCAL: 'LOGIN_LOCAL'
+    LOGIN_LOCAL: 'LOGIN_LOCAL',
+    LOGOUT: 'LOGOUT'
 
 }
 

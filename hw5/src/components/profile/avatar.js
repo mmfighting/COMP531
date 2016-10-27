@@ -31,11 +31,13 @@ class Avatar extends Component {
             <div className="col-sm-2"></div>
             <div className="col-sm-8">
                 <div className="row">
-                    <img width="100%" src={this.props.img}/>
+                    <img width="100%" className="img-responsive" src={this.props.img}/>
                 </div>
                 <div className="row">
-                    <em>Upload new profile avatar</em>
-                    <input type="file" accept="image/*" onChange={(e) => this.handleImageChange(e)}/>
+                    <label className="btn btn-warning btn-file">
+                        Upload new avatar
+                        <input type="file" accept="image/*" onChange={(e) => this.handleImageChange(e)}/>
+                    </label>
                 </div>
                 { !this.file ? '' :
                     <div>

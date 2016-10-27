@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { navToMain, navToProfile, navToOut } from '../../actions'
 
+
 const Nav = ({username, onProfile, dispatch}) => (
     <nav className="navbar navbar-reverse">
         <div className="container-fluid">

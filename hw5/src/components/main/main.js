@@ -1,17 +1,16 @@
 import React from 'react'
+import Headline from './headline.js'
+import Following from './following'
 
 const Main = () => (
-    // This is the main view.
-    // On this view we display the user's avatar, their headline,
-    // their feed of articles (with a search filter),
-    // and their list of followers.
     <div className="row">
-        <div className="col-sm-3">
-            This is Main page
-            Headline!
-            Following!
+        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <Headline/>
+            <Following/>
         </div>
-        articles view!
+        <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            ArticlesView
+        </div>
     </div>
 )
 

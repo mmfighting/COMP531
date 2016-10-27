@@ -24,6 +24,8 @@ const Action = {
     NAV_MAIN: 'NAV_MAIN',
     NAV_OUT: 'NAV_OUT',
 
+    LOGIN_LOCAL: 'LOGIN_LOCAL'
+
 }
 
 export default Action
@@ -35,8 +37,15 @@ export function navToMain() { return { type: Action.NAV_MAIN }}
 export function navToOut() { return { type: Action.NAV_OUT }}
 
 export function resource(method, endpoint, payload, submitJson = true) {
-    const options = {credentials: 'include', method}
-    if (submitJson) options.headers = {'Content-Type': 'application/json'}
+    const options = {
+        credentials: 'include',
+        method
+    }
+    //if submit a JSON, then set content-type in options tobe json
+    if (submitJson) {
+        options.headers = {'Content-Type': 'application/json'}
+    }
+    //if has payload, set options.body=payload in string form
     if (payload) {
         options.body = submitJson ? JSON.stringify(payload) : payload
     }

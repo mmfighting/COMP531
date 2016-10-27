@@ -18,7 +18,7 @@ const logger = createLogger()
 
 let store = createStore(Reducer, applyMiddleware(thunkMiddleware))
 
-//store.dispatch(initialVisit())
+//store.dispatch(initialMainView())
 
 render(
     <Provider store={store}>

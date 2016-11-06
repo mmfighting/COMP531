@@ -1,0 +1,108 @@
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+    margin-top: 60px
+}
+.following{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.btn-sm{
+    float: right;
+}
+
+.friend{
+    font-size: medium;
+    font-weight: bold;
+    color: #2b669a
+}
+
+.status{
+    font-family: 'Comic Sans MS';
+    font-weight: bold;
+    color: #002469;
+}
+
+.followingImage{
+    height: 50px;
+}
+h3{
+    text-align: center;
+    font-size: 3vw;
+}
+
+textarea{
+    margin: 8px;
+    width:100%;
+}
+.img-responsive{
+    margin-bottom: 8px;
+    max-width: 90%;
+}
+.emoji{
+    width: 40px;
+}
+.content{
+    margin: 10px;
+}
+.time{
+    color: #8c8c8c;
+}
+.followingImage{
+    max-width: 50px;
+}
+.centerImg{
+    margin-left: auto;
+    margin-right: auto;
+}
+#display_info {
+    font-size: large;
+    font-weight: bold;
+    margin-left: 10%;
+}
+
+[name=currentprofile_col] {
+    background-color: #00b3ee;
+    margin-right: 20px;
+}
+
+[name=updateprofile_col] {
+    background-color: #e7c3c3;
+
+}
+
+[name=update_info] {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.btn-md {
+    margin-top: 10px;
+}
+
+
+img[name=ricelogo]{
+    margin: -10px;
+    height: 80px;
+}
+
+body{
+    background-image: url("http://images.freepicturesweb.com/img1/05/02/43.jpg");
+}
+
+#statusinput {
+    width: 100%;
+    padding: 0px;
+}
+
+input[name=adduserinput]{
+    width: 100%;
+    padding: 0px;
+}
+
+span[class=notification]{
+    font-weight: normal;
+    color: #cc0000;
+    display: none;
+}

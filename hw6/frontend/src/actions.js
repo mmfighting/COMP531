@@ -25,8 +25,8 @@ const Action = {
     NAV_OUT: 'NAV_OUT',
 
     LOGIN_LOCAL: 'LOGIN_LOCAL',
-    LOGOUT: 'LOGOUT'
-
+    LOGOUT: 'LOGOUT',
+    REGISTER: 'REGISTER'
 }
 
 export default Action

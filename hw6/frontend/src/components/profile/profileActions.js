@@ -1,4 +1,4 @@
-import Action, { updateError, resource } from '../../actions'
+import Action, {updateError, resource} from '../../actions'
 
 export function validateProfile({username, email, zipcode, password, pwconf}) {
     if (username) {
@@ -13,19 +13,36 @@ export function validateProfile({username, email, zipcode, password, pwconf}) {
         }
     }
 
-    if (zipcode) {
-        if (!zipcode.match('^[0-9]{5}$')) {
-            return 'Invalid zipcode. Must be 5 digits. e.g., 77005'
+    if (dob) {
+        var today = new Date(Date.now())
+        var dateob= new Date(dob)
+        var age = today.getFullYear() - dateob.getFullYear()
+        var month = today.getMonth() - dateob.getMonth()
+        var date = today.getDate() - dateob.getDate()
+        if (month < 0) {
+            age--
         }
-    }
-
-    if (password || pwconf) {
-        if (password !== pwconf) {
-            return 'Password do not match!'
+        if (month == 0 && date < 0) {
+            age--
         }
+        if(age<18){
+            return 'You need to be 18 or older to register.'
     }
+}
 
-    return ''
+if (zipcode) {
+    if (!zipcode.match('^[0-9]{5}$')) {
+        return 'Invalid zipcode. Must be 5 digits. e.g., 77005'
+    }
+}
+
+if (password || pwconf) {
+    if (password !== pwconf) {
+        return 'Password do not match!'
+    }
+}
+
+return ''
 }
 
 export function updateHeadline(headline) {
@@ -60,7 +77,7 @@ function updateField(field, value) {
             const payload = {}
             payload[field] = value
             resource('PUT', field, payload).then((response) => {
-                const action = { type: Action.UPDATE_PROFILE }
+                const action = {type: Action.UPDATE_PROFILE}
                 action[field] = response[field]
                 if (field == 'password')
                     dispatch(updateError('will not change password'))
@@ -74,14 +91,17 @@ function updateField(field, value) {
 function fetchField(field) {
     return (dispatch) => {
         resource('GET', field).then((response) => {
-            const action = { type: Action.UPDATE_PROFILE }
-            switch(field) {
+            const action = {type: Action.UPDATE_PROFILE}
+            switch (field) {
                 case 'avatars':
-                    action.avatar = response.avatars[0].avatar; break;
+                    action.avatar = response.avatars[0].avatar;
+                    break;
                 case 'email':
-                    action.email = response.email; break;
+                    action.email = response.email;
+                    break;
                 case 'zipcode':
-                    action.zipcode = response.zipcode; break;
+                    action.zipcode = response.zipcode;
+                    break;
             }
             dispatch(action)
         })
@@ -95,7 +115,7 @@ export function uploadImage(file) {
             fd.append('image', file)
             resource('PUT', 'avatar', fd, false)
                 .then((response) => {
-                    dispatch({ type: Action.UPDATE_PROFILE, avatar: response.avatar })
+                    dispatch({type: Action.UPDATE_PROFILE, avatar: response.avatar})
                 })
         }
     }

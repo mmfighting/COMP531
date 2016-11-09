@@ -15,7 +15,7 @@ export function validateProfile({username, email, dob, zipcode, password, pwconf
 
     if (dob) {
         var today = new Date(Date.now())
-        var dateob= new Date(dob)
+        var dateob = new Date(dob)
         var age = today.getFullYear() - dateob.getFullYear()
         var month = today.getMonth() - dateob.getMonth()
         var date = today.getDate() - dateob.getDate()
@@ -25,24 +25,24 @@ export function validateProfile({username, email, dob, zipcode, password, pwconf
         if (month == 0 && date < 0) {
             age--
         }
-        if(age<18){
+        if (age < 18) {
             return 'You need to be 18 or older to register.'
+        }
     }
-}
 
-if (zipcode) {
-    if (!zipcode.match('^[0-9]{5}$')) {
-        return 'Invalid zipcode. Must be 5 digits. e.g., 77005'
+    if (zipcode) {
+        if (!zipcode.match('^[0-9]{5}$')) {
+            return 'Invalid zipcode. Must be 5 digits. e.g., 77005'
+        }
     }
-}
 
-if (password || pwconf) {
-    if (password !== pwconf) {
-        return 'Password do not match!'
+    if (password || pwconf) {
+        if (password !== pwconf) {
+            return 'Password do not match!'
+        }
     }
-}
 
-return ''
+    return ''
 }
 
 export function updateHeadline(headline) {

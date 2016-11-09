@@ -1,5 +1,5 @@
 # COMP431/531 RiceBook lh11 Surge Hosted Site
 "netId": "lh11"
 "frontend": "https://neighborly-manager.surge.sh",
-"backend": "https:// .herokuapp.com/"
+"backend": "https://lh11server.herokuapp.com/"
 

@@ -1,6 +1,6 @@
 import Action, {updateError, resource} from '../../actions'
 
-export function validateProfile({username, email, zipcode, password, pwconf}) {
+export function validateProfile({username, email, dob, zipcode, password, pwconf}) {
     if (username) {
         if (!username.match('^[a-zA-Z][a-zA-Z0-9]+')) {
             return 'Invalid username. Username must start with a letter and can only contains letters and numbers.'

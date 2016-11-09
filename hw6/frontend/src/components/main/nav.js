@@ -25,7 +25,7 @@ const Nav = ({username, onProfile, dispatch}) => (
                                     <li><a href="#" onClick={() => { dispatch(navToMain()) }}><span className="glyphicon glyphicon-home"/>Home</a></li> :
                                     <li><a href="#" onClick={() => { dispatch(navToProfile()) }}><span className="glyphicon glyphicon-user"/>Edit Profile</a></li>
                                 }
-                                <li><a href="#" onClick={() => { dispatch(logout()) }}><span className="glyphicon glyphicon-log-out"/>Log out {username} </a></li>
+                                <li><a href="#" id='nav_logout' onClick={() => { dispatch(logout()) }}><span className="glyphicon glyphicon-log-out"/>Log out {username} </a></li>
                                 <li>&nbsp;</li>>
                             </ul>
                         </div>

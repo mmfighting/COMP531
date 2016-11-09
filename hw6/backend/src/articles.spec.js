@@ -2,9 +2,9 @@
 const expect = require('chai').expect
 const fetch = require('isomorphic-fetch')
 
-const url = path => `http://localhost:3000${path}`
+const url = path => `http://127.0.0.1:3000${path}`
 
-describe('Validate Post Article functionality', () => {
+describe('Validate Article functionality', () => {
 
     it('should give me three or more articles', (done) => {
         fetch(url("/articles")).then((res)=> {
@@ -15,7 +15,7 @@ describe('Validate Post Article functionality', () => {
         }).then(done).catch(done)
     }, 200)
 
-    it('should add two articles with successive article ids, and return the article being added with correct given text each time', (done) => {
+    it('POST /article should add article with given text with increasing id', (done) => {
         // add a new article
         // verify you get the article back with an id
         // verify the content of the article
@@ -43,7 +43,7 @@ describe('Validate Post Article functionality', () => {
         }).then(done).catch(done)
     }, 200)
 
-    it('should return an article with a specified id', (done) => {
+    it('Get /article should return an article with a specified id', (done) => {
         // call GET /articles first to find an id, perhaps one at random
         // then call GET /articles/id with the chosen id
         // validate that only one article is returned

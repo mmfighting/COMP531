@@ -7,7 +7,7 @@ var cookieKey = 'sid'
 var db = {users: []}
 var aPW = md5(['job_offer', 'mypassword'].join(':'))
 var sessionUser={}
-db.users.push({'username': 'lu', 'password': aPW, 'salt': 'job_offer'})
+db.users.push({'username': 'lh11', 'password': aPW, 'salt': 'job_offer'})
 
 const register = (req, res) => {
     console.log("payload received", req.body)
@@ -43,8 +43,6 @@ function generateCode(userObj){
     var code=[Date.now(),username].join(':')
     return md5(code)
 }
-
-
 
 const login = (req, res) => {
     var username = req.body.username

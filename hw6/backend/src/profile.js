@@ -1,18 +1,20 @@
 var profiledb = {
     profiles: [
         {
-            username: 'Scott',
-            headline: 'This is my headline!',
-            email: 'foo@bar.com',
-            zipcode: 12345,
-            avatar: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/DWLeebron.jpg/220px-DWLeebron.jpg'
+            'username': 'Scott',
+            'headline': 'This is my headline!',
+            'email': 'foo@bar.com',
+            'dob':'12/01/1980',
+            'zipcode': 12345,
+            'avatar': 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/DWLeebron.jpg/220px-DWLeebron.jpg'
         },
         {
             'username': 'Mike',
-            headline: 'Happy!',
-            email: 'mike@happy.com',
-            zipcode: 67890,
-            avatar: 'http://bootdey.com/img/Content/avatar/avatar6.png'
+            'headline': 'Happy!',
+            'email': 'mike@happy.com',
+            'dob':'12/01/1990',
+            'zipcode': 67890,
+            'avatar': 'http://bootdey.com/img/Content/avatar/avatar6.png'
         }
     ]
 }
@@ -21,31 +23,28 @@ const getHeadlines = (req, res) => {
 
     // we will want middleware to supply this value
     // for now we provide a default
-    if (!req.user) req.user = 'Scott'
-
-    const users = req.params.users ? req.params.users.split(',') : [req.user]
+    const users = req.params.user ? req.params.user.split(',') : ['Scott']
 
     // this returns only one headline, but we want to send
     // an array of all the requested user's headlines
     var headlines = []
     users.forEach((user)=> {
-        var userObj = profiledb.profiles.filter((profile)=> {
-            profile.username === user
+        profiledb.profiles.forEach((obj)=> {
+            if (obj['username'] === user) {
+                headlines.push({username: user, headline: obj['headline']})
+            }
         })
-        if (!userObj) {
-            headlines.push({username: user, headline: userObj[0].headline})
-        }
     })
-
-    res.send({
-        headlines: headlines
-    })
-
+    if(headlines.length>0){
+        res.send({headlines: headlines})
+    }else{
+        res.status(400).send('Invalid request. Registered users are Scott and Mike.')
+    }
 }
 
 const getdob = (req, res)=> {
     var d = new Date('12/01/1992')
-    res.send(d.getMilliseconds())
+    res.send(d.getTime())
 }
 const putheadline = (req, res) => {
     res.send({headlines: [{username: 'Scott', status: req.body.headline || 'you did not supply headline'}]})
@@ -60,10 +59,25 @@ const headlines = (req, res) => {
 }
 
 const email = (req, res) => {
-    if (user) {
-        res.send({'username': user, email: 'youremail@gg.com'})
+    // we will want middleware to supply this value
+    // for now we provide a default
+    const users = req.params.user ? req.params.user.split(',') : ['Scott']
+
+    // this returns only one headline, but we want to send
+    // an array of all the requested user's headlines
+    var emails = []
+    users.forEach((user)=> {
+        profiledb.profiles.forEach((obj)=> {
+            if (obj['username'] === user) {
+                emails.push({username: user, email: obj['email']})
+            }
+        })
+    })
+    if(emails.length>0){
+        res.send({emails: emails})
+    }else{
+        res.send({emails: [{username: user, email: 'you@gmail.com'}]})
     }
-    res.send({username: 'Scott', email: 'Happy@kk.com'})
 }
 
 const putemail = (req, res) => {
@@ -71,12 +85,20 @@ const putemail = (req, res) => {
 }
 
 const zipcode = (req, res) => {
-    if(!user){
-        res.send({username: user, zipcode: '13579'})
-        return
-    }
-    else{
-        res.send({username: 'Scott', zipcode: '29348'})
+    const users = req.params.user ? req.params.user.split(',') : ['Scott']
+    var zipcode = []
+    users.forEach((user)=> {
+        profiledb.profiles.forEach((obj)=> {
+            if (obj['username'] === user) {
+                zipcode.push({username: user, zipcode: obj['zipcode']})
+            }
+        })
+    })
+
+    if(emails.length>0){
+        res.send({zipcode: zipcode})
+    }else{
+        res.send({zipcode: [{username: user, zipcode: '77005'}]})
     }
 }
 
@@ -85,7 +107,24 @@ const putzipcode = (req, res) => {
 }
 
 const avatars = (req, res) => {
-    res.send({avatars: [{username: 'Scott', avatar: 'https://scott.profile.url.jpg'}, {username: 'Mike', avatar: 'https://mike.profile.url.jpg'}]})
+    const users = req.params.user ? req.params.user.split(',') : ['Scott']
+
+    var avatars = []
+    users.forEach((user)=> {
+        profiledb.profiles.forEach((obj)=> {
+            if (obj['username'] === user) {
+                avatars.push({username: user, avatar: obj['avatar']})
+            }
+        })
+    })
+
+    if(emails.length>0){
+        res.send({avatars: avatars})
+    }else{
+        res.send({avatars: [{username: user, avatar: 'http://bootdey.com/img/Content/avatar/avatar6.png'}]})
+    }
+
+
 }
 
 const putavatar = (req, res) => {
@@ -94,16 +133,13 @@ const putavatar = (req, res) => {
 
 module.exports = app => {
     app.get('/', index)
-    app.get('/:user?', index)
     app.get('/headlines/:user?', getHeadlines)
     app.put('/headline', putheadline)
-    app.get('/dob/:user?', email)
-    app.put('/email', putemail)
+    app.get('/dob', getdob)
     app.get('/email/:user?', email)
     app.put('/email', putemail)
     app.get('/zipcode/:user?', zipcode)
     app.put('/zipcode', putzipcode)
     app.get('/avatars/:user?', avatars)
     app.put('/avatar', putavatar)
-    app.get('/dob', getdob)
 }

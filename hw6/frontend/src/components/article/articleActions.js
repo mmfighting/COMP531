@@ -1,5 +1,6 @@
 import Action, { resource } from '../../actions'
 
+
 export function fetchArticles() {
 	return (dispatch, getState) => {
 		resource('GET', 'articles')

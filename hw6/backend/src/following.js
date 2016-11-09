@@ -1,4 +1,4 @@
-;
+
 var followingdb = [{
     username: 'Lucy',
     following: ['Amy', 'Julie', 'Mike']
@@ -17,7 +17,7 @@ const getFollowing = (req, res)=> {
     if (!followed) {
         res.status(401).send('The user requested does not exist')
     }
-    res.status(200).send(followed[0].following)
+    res.send(followed[0].following)
 }
 
 const putFollowing = (req, res)=> {
@@ -34,7 +34,7 @@ const putFollowing = (req, res)=> {
         res.status(401).send('User is already in the following list of current user')
     }
     following.push(user)
-    res.status(200).send('User has been added to the following list')
+    res.send('User has been added to the following list')
 }
 
 const deleteFollowing = (req, res)=> {
@@ -56,7 +56,6 @@ const deleteFollowing = (req, res)=> {
     else {
         res.status(401).send('User is not in following list')
     }
-
 }
 
 module.exports = app => {

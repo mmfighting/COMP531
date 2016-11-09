@@ -12,6 +12,7 @@ function followers(state = { followers: {} }, action) {
 
 function articles(state = { articles: {}, searchKeyword: '', avatars: {} }, action) {
     switch(action.type) {
+        case Action.EDIT_ARTICLE:
         case Action.ADD_ARTICLE:
             const articles = { ...state.articles }
             articles[action.article.id] = action.article
@@ -21,10 +22,8 @@ function articles(state = { articles: {}, searchKeyword: '', avatars: {} }, acti
             return { ...state, articles: action.articles }
         case Action.UPDATE_AVATARS:
             return { ...state, avatars: action.avatars }
-
         case Action.SEARCH_KEYWORD:
             return { ...state, searchKeyword: action.keyword }
-
         default:
             return state
     }
@@ -32,7 +31,6 @@ function articles(state = { articles: {}, searchKeyword: '', avatars: {} }, acti
 
 function profile(state = { username:'', headline: '', avatar: '', zipcode: '', email: '', dob: '' }, action) {
     switch (action.type) {
-
         case Action.UPDATE_HEADLINE:
             return {...state, headline: action.headline}
         case Action.LOGIN_LOCAL:
@@ -45,7 +43,6 @@ function profile(state = { username:'', headline: '', avatar: '', zipcode: '', e
             if (action.zipcode) return { ...state, zipcode: parseInt(action.zipcode) }
             if (action.email) return { ...state, email: action.email }
             if (action.dob) return {...state, dob: action.dob}
-
         default:
             return state
     }

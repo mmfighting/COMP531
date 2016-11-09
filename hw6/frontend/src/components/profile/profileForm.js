@@ -28,28 +28,28 @@ class ProfileForm extends Component {
             <div className="form-group row">
                 <label className="col-sm-3 form-control-label" for="email">email</label>
                 <div className="col-sm-6">
-                    <input className="form-control" id="email" type="text" placeholder={this.props.oldEmail}
+                    <input className="form-control" id="profile_email" type="text" placeholder={this.props.oldEmail}
                            ref={(node) => this.email = node }/>
                 </div>
             </div>
             <div className="form-group row">
                 <label className="col-sm-3 form-control-label" for="zipcode">zipcode</label>
                 <div className="col-sm-6">
-                    <input className="form-control" id="zipcode" type="text" placeholder={this.props.oldZipcode}
+                    <input className="form-control" id="profile_zipcode" type="text" placeholder={this.props.oldZipcode}
                            ref={(node) => this.zipcode = node }/>
                 </div>
             </div>
             <div className="form-group row">
                 <label className="col-sm-3 form-control-label" for="password">password</label>
                 <div className="col-sm-6">
-                    <input className="form-control" id="password" type="password" placeholder="password"
+                    <input className="form-control" id="profile_password" type="password" placeholder="password"
                            ref={(node) => this.password = node }/>
                 </div>
             </div>
             <div className="form-group row">
                 <label className="col-sm-3 form-control-label" for="pwconf">password confirmation</label>
                 <div className="col-sm-6">
-                    <input className="form-control" id="pwconf" type="password"placeholder="password"
+                    <input className="form-control" id="profile_pwconf" type="password"placeholder="password"
                            ref={(node) => this.pwconf = node }/>
                 </div>
             </div>
@@ -57,7 +57,7 @@ class ProfileForm extends Component {
             <div className="form-group row">
                 <span className="col-sm-3 form-control-label"></span>
                 <div className="col-sm-9">
-                    <button className="btn btn-primary" type="submit">Update</button>
+                    <button className="btn btn-primary" id="update_profile_btn" type="submit">Update</button>
                 </div>
             </div>
         </form>

@@ -32,7 +32,7 @@ export function localLogin(username, password) {
                 //navigate to new main page and initialize the page
                 dispatch(initialMainView())
             }).catch((err) => {
-            dispatch(updateError(`There was an error logging in as ${username}`))
+            dispatch(updateError(`There was an error logging in as ${username}. Error message is : ${err}`))
             console.log("Login fails: " + err)
         })
     }

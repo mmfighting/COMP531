@@ -24,7 +24,7 @@ class NewArticle extends Component {
             <div className="well">
                 <div>
                     <h5>Post something:</h5>
-                    <textarea class="newPostBody"
+                    <textarea class="newPostBody" id="newPostBody"
                               cols="80" rows="4" placeholder="Anything interesting"
                               value={ this.message }
                               onChange={(e) => {
@@ -39,7 +39,7 @@ class NewArticle extends Component {
                 { !this.file && !this.message ? '' :
                     <div>
                         <div className="text-right">
-                            <input className="btn btn-info" type="button" value="Publish new article"
+                            <input className="btn btn-info" type="button" id='new_article_btn' value="Publish new article"
                                    onClick={() => {
                                        this.props.dispatch(uploadArticle(this.message, this.file))
                                        this.message = ''

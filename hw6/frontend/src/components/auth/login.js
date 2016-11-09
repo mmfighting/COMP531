@@ -13,7 +13,7 @@ const Login = ({dispatch})=> {
             </p>
             <p>
                 <b>Password</b><br/>
-                <input type="password" id="index_login_password" ref={(node) => { password = node }}/>
+                <input type="password" id="login_password" ref={(node) => { password = node }}/>
             </p>
             <input type="submit" className="btn-success" id="index_login_btn" value="Log In!" onClick={() => {dispatch(localLogin(username.value, password.value))}} />
         </div>

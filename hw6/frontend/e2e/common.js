@@ -1,7 +1,6 @@
 import {expect} from 'chai'
 import {findId, sleep} from './selenium'
 
-// TODO add your test user credentials here!
 exports.creds = {
     username: 'lh11',
     password: 'maybe-treated-instead'

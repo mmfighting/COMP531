@@ -8,11 +8,11 @@ class Headline extends Component {
         return (
             <div>
                 <div className="well text-center">
-                    <h3 id="username">{this.props.username}</h3>
+                    <h3 id="headline_username">{this.props.username}</h3>
                     <img className="img-responsive img-rounded centerImg"
                         src={this.props.avatar}/>
-                    <h4 id="headline">{this.props.headline}</h4>
-                    <input className="form-control" id="headline" type="text"
+                    <h4 id="headline_text">{this.props.headline}</h4>
+                    <input className="form-control" id="headline_input" type="text"
                            placeholder="update your headline"
                            ref={ (node) => {
                                this.newHeadline = node
@@ -20,7 +20,7 @@ class Headline extends Component {
                            onChange={() => this.forceUpdate()}/>
                     <div>
                         <input className="btn btn-info btn-md"
-                               type="button" value="Update your Headline"
+                               type="button" value="Update your Headline" id="headline_btn"
                                onClick={() => {
                                    this.props.dispatch(updateHeadline(this.newHeadline.value))
                                    this.newHeadline.value = ''

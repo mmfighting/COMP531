@@ -1,0 +1,21 @@
+    it("Add the 'Follower' user and verify following count increases by one", (done)=> {
+        const newFollower = "Follower"
+        let oldLength = 0;
+        sleep(500)
+            .then(
+                findClassName('follower').then((followers) => {
+                    expect(followers.length).to.be.at.least(1)
+                    oldLength = followers.length;
+                })
+            )
+            .then(findId('new_follower_input').clear())
+            .then(findId('new_follower_input').sendKeys(newFollower))
+            .then(findId('add_follower_btn').click())
+            .then(sleep(3000))
+            .then(findClassName('follower').then(
+                (followers)=> {
+                    expect(followers.length).to.eql(oldLength + 1)
+                })
+            )
+            .then(done)
+    })

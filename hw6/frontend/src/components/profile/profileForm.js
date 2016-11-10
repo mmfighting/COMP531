@@ -29,13 +29,13 @@ class ProfileForm extends Component {
             <div className="form-group row">
                 <label className="col-sm-3 form-control-label" for="username">Username</label>
                 <div className="col-sm-6">
-                    {this.props.oldUsername}
+                    <label className="form-control-label">{this.props.oldUsername}</label>
                 </div>
             </div>
             <div className="form-group row">
                 <label className="col-sm-3 form-control-label" for="username">Date Of Birth</label>
                 <div className="col-sm-6">
-                    {this.props.oldDob}
+                    <label className="form-control-label">{this.props.oldDob}</label>
                 </div>
             </div>
             <div className="form-group row">
@@ -44,8 +44,8 @@ class ProfileForm extends Component {
                     <input className="form-control" id="profile_email" type="text" placeholder={this.props.oldEmail}
                            ref={(node) => this.email = node }/>
                 </div>
-                <div className="col-sm-4">
-                    {this.props.oldEmail}
+                <div className="col-sm-4" id="profile_display_email">
+                    <label className="form-control-label">{this.props.oldEmail}</label>
                 </div>
             </div>
             <div className="form-group row">
@@ -54,8 +54,8 @@ class ProfileForm extends Component {
                     <input className="form-control" id="profile_zipcode" type="text" placeholder={this.props.oldZipcode}
                            ref={(node) => this.zipcode = node }/>
                 </div>
-                <div className="col-sm-4">
-                    {this.props.oldZipcode}
+                <div className="col-sm-4" id="profile_display_zipcode">
+                    <label className="form-control-label">{this.props.oldZipcode}</label>
                 </div>
             </div>
             <div className="form-group row">

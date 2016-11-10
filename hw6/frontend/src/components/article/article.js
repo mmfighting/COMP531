@@ -54,6 +54,7 @@ class Article extends Component {
 
                         {!this.editable ? "" :
                             <button className="btn btn-primary"
+                                    id="article_edit_btn"
                                     title="Click the text to edit your post"
                                     disabled={this.disabled}
                                     onClick={() => {
@@ -68,7 +69,7 @@ class Article extends Component {
                     { !this.addComment ? '' :
                         <div className="btn-group">
                             <div>
-                                <textarea className="newPostText"
+                                <textarea className="newCommentText"
                                           rows="4" placeholder="your comment"
                                           value={this.newComment}
                                           onChange={(e) => {

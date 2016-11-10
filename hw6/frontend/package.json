@@ -9,7 +9,7 @@
     "lint": "eslint src --ext .js --ext .jsx --cache",
     "watch": "webpack --watch",
     "build": "webpack -d",
-    "deploy": "webpack -p && surge -p dist",
+    "deploy": "webpack -p && surge -p dist -d neighborly-manager.surge.sh",
     "start": "webpack-dev-server --content-base dist -d",
     "test": "npm run mocha",
     "test:watch": "npm run mocha -- -w",

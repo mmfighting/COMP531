@@ -4,58 +4,68 @@ footer {
     padding: 15px;
     margin-top: 60px
 }
-.following{
+
+.following {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-.btn-sm{
+
+.btn-sm {
     float: right;
 }
 
-.friend{
+.friend {
     font-size: medium;
     font-weight: bold;
     color: #2b669a
 }
 
-.status{
+.status {
     font-family: 'Comic Sans MS';
     font-weight: bold;
     color: #002469;
 }
 
-.followingImage{
+.following_Img {
     height: 50px;
 }
-h3{
+
+h3 {
     text-align: center;
     font-size: 3vw;
 }
 
-textarea{
+textarea {
     margin: 8px;
-    width:100%;
+    width: 100%;
 }
-.img-responsive{
+
+.img-responsive {
     margin-bottom: 8px;
     max-width: 90%;
 }
-.emoji{
+
+.emoji {
     width: 40px;
 }
-.content{
+
+.content {
     margin: 10px;
 }
-.time{
+
+.time {
     color: #8c8c8c;
 }
-.followingImage{
+
+.followingImage {
     max-width: 50px;
 }
-.centerImg{
+
+.centerImg {
     margin-left: auto;
     margin-right: auto;
 }
+
 #display_info {
     font-size: large;
     font-weight: bold;
@@ -81,14 +91,13 @@ textarea{
     margin-top: 10px;
 }
 
-
-img[name=ricelogo]{
+img[name=ricelogo] {
     margin: -10px;
     height: 80px;
 }
 
-body{
-    background-image: url("http://images.freepicturesweb.com/img1/05/02/43.jpg");
+body {
+    background: #78d1e2; /* For browsers that do not support gradients */
 }
 
 #statusinput {
@@ -96,13 +105,23 @@ body{
     padding: 0px;
 }
 
-input[name=adduserinput]{
+input[name=adduserinput] {
     width: 100%;
     padding: 0px;
 }
 
-span[class=notification]{
+span[class=notification] {
     font-weight: normal;
     color: #cc0000;
     display: none;
 }
+
+
+#top-link-block{
+    position: fixed;
+    bottom: 95px;
+    right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#top-link-block.fa {margin-right: 5px;}

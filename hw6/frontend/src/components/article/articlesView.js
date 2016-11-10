@@ -13,7 +13,7 @@ const ArticlesView = ({username, articles, dispatch}) => {
             <NewArticle/>
             <div className="well">
                 <div>
-                    <input className="form-control" type="text" placeholder="search your feed"
+                    <input className="form-control" id="search_article_input" type="text" placeholder="search your feed"
                            ref={(node) => keyword = node }
                            onChange={() => { dispatch(searchKeyword(keyword.value)) }}/>
                 </div>

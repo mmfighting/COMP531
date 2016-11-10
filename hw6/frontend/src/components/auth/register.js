@@ -23,42 +23,42 @@ class Register extends Component {
                     <div className="form-group row">
                         <label className="col-sm-3 form-control-label">Username</label>
                         <div className="col-sm-9">
-                            <input className="form-control" id="username" type="text"
+                            <input className="form-control" id="register_username" type="text"
                                    ref={(node) => this.username = node } placeholder="username"/>
                         </div>
                     </div>
                     <div className="form-group row">
                         <label className="col-sm-3 form-control-label">Email</label>
                         <div className="col-sm-8">
-                            <input className="form-control" id="email" type="text" ref={(node) => this.email = node }
+                            <input className="form-control" id="register_email" type="text" ref={(node) => this.email = node }
                                    placeholder="your.email@mail.com"/>
                         </div>
                     </div>
                     <div className="form-group row">
                         <label className="col-sm-3 form-control-label">Date of Birth</label>
                         <div className="col-sm-8">
-                            <input className="form-control" id="dob" type="date" min="1890-01-01" max="1998-12-30"
+                            <input className="form-control" id="register_dob" type="date" min="1890-01-01" max="1998-12-30"
                                    ref={(node) => this.dob = node } placeholder="mm/dd/yyyy"/>
                         </div>
                     </div>
                     <div className="form-group row">
                         <label className="col-sm-3 form-control-label">Zipcode</label>
                         <div className="col-sm-8">
-                            <input className="form-control" id="zipcode" type="zipcode"
+                            <input className="form-control" id="register_zipcode" type="zipcode"
                                    ref={(node) => this.zipcode = node } placeholder="Five-digit zipcode, e.g. 77005"/>
                         </div>
                     </div>
                     <div className="form-group row">
                         <label className="col-sm-3 form-control-label">Password</label>
                         <div className="col-sm-8">
-                            <input className="form-control" id="password" type="password"
+                            <input className="form-control" id="register_password" type="password"
                                    ref={(node) => this.password = node } placeholder="password"/>
                         </div>
                     </div>
                     <div className="form-group row">
                         <label className="col-sm-3 form-control-label">Confirmation</label>
                         <div className="col-sm-8">
-                            <input className="form-control" id="pwconf" type="password"
+                            <input className="form-control" id="register_pwconf" type="password"
                                    ref={(node) => this.pwconf = node } placeholder="password confirmation"/>
                         </div>
                     </div>

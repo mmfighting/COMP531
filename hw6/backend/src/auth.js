@@ -124,5 +124,4 @@ module.exports = app => {
     app.post('/register', register)
     app.put('/password', isLoggedIn, password)
     app.put('/logout', isLoggedIn, logout)
-
 }

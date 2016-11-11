@@ -10,10 +10,6 @@ describe('Test main Page: headline and articles', () => {
         go().then(common.login).then(sleep(500)).then(done)
     })
 
-    after('should log out', (done)=> {
-        go().then(common.logout).then(sleep(500)).then(done)
-    })
-
     it("Update the headline and verify the change", (done) => {
         // save the old headline
         let text_old;
@@ -115,4 +111,7 @@ describe('Test main Page: headline and articles', () => {
             .then(done)
     })
 
+    after('should logout and nav to landing page', (done) => {
+        common.logout.then(sleep(500)).then(done)
+    })
 })

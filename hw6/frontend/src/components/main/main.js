@@ -13,11 +13,11 @@ const Main = () => (
                         <i className="glyphicon glyphicon-chevron-up"/>Back to Top
                     </a>
             </span>
-            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <Headline/>
                 <Following/>
             </div>
-            <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                 <ArticlesView/>
             </div>
         </div>

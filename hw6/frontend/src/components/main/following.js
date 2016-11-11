@@ -10,8 +10,12 @@ const Follower = ({name, avatar, headline, dispatch}) => (
             <img className="following_Img" src={ avatar }/>
         </div>
         <div className="media-body">
-            <div><h5 color="#02307a" className="following_name">{ name }</h5></div>
-            <div><em>{ headline }</em></div>
+            <div>
+                <h5 color="#02307a" className="following_name">{ name }</h5>
+            </div>
+            <div>
+                <em>{ headline }</em>
+            </div>
         </div>
         <div className="media-right">
             <span className="glyphicon glyphicon-remove"onClick={() => {

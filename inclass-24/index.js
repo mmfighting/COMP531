@@ -20,7 +20,7 @@ app.use(middleware)
 
 require('./src/profile')(app)
 require('./src/articles')(app)
-require('./src/authLocal')(app)
+require('./src/auth')(app)
 require('./src/authFacebook')(app)
 require('./src/following')(app)
 

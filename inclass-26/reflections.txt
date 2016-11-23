@@ -1,0 +1,20 @@
+• What did you hope to learn but did not?
+I am interested to learn how to develop a web content management system.
+
+• What did you really enjoy learning about?
+I like learning React and CSS so that we can build beautiful front end web app.
+
+• What worked well in the course? and how?
+Most of the inclass assignments helped understand concept well.
+
+• What did not work well in the course and how might it be improved?
+
+
+• What could I have done to help you more, presentation of material, design of in class
+exercises, goals of projects – and be specific please!
+- React and Redux is a really important part of the front end app. It took me a long time to figure out how to use it.
+Wish you had spent more time explaining it.
+
+
+• Anything else you like to say?
+Overall it's a great course, I learnt a lot.

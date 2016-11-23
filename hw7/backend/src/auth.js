@@ -101,24 +101,18 @@ const putpassword = (req, res)=> {
         res.status(400).send("invalid input")
         return
     }
-    User.find({username: name}, function(err, usrObj){
+    const userSalt=[Date.now(), username].join(':')
+    const newpassword=md5([userSalt, password].join(':'))
+    User.findOneAndUpdate({username: username},{ salt: userSalt , hash: newpassword}, function(err){
         if(!err){
-            const userSalt=[Date.now(), req.body.username].join(':')
-            const newpassword=md5([userSalt, password].join(':'))
-            User.findOneAndUpdate({username: username},{ salt: userSalt , hash: newpassword}, function(err){
-                if(!err){
-                    var msg = {username: username, status: 'Password updated'}
-                    res.send(msg)
-                }else{
-                    res.status(401).send(err)
-                }
-            })
+            var msg = {username: username, status: 'Password updated'}
+            res.send(msg)
         }else{
             res.status(401).send(err)
         }
     })
 }
-
+s
 function isLoggedIn(req, res, next) {
     console.log("checking whether user is local logged in...")
     const sid = req.cookies[cookieKey]

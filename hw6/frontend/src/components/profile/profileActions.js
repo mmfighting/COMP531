@@ -79,10 +79,14 @@ function updateField(field, value) {
             resource('PUT', field, payload).then((response) => {
                 const action = {type: Action.UPDATE_PROFILE}
                 action[field] = response[field]
-                if (field == 'password')
-                    dispatch(updateError('Password you entered is valid, but password cannot be changed for now'))
-                else
+                if (field == 'password'){
+                    resource('PUT','password',{password: value})
+                        .then((response)=>{
+                            dispatch(displaySuccessMsg("Update password succeed!"))
+                        })
+                }else{
                     dispatch(action)
+                }
             })
         }
     }

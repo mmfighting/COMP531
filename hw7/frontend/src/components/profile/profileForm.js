@@ -95,7 +95,7 @@ export default connect(
         return {
             error: state.common.error,
             oldUsername: state.profile.username,
-            oldDob: dateFormat(new Date(state.profile.dob),"mmmm dS, yyyy"),
+            oldDob: state.profile.dob,
             oldZipcode: state.profile.zipcode,
             oldEmail: state.profile.email,
         }

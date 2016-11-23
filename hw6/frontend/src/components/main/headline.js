@@ -17,11 +17,12 @@ class Headline extends Component {
                            ref={ (node) => {
                                this.newHeadline = node
                            }}
-                           onChange={() => this.forceUpdate()}/>
+                           />
                     <div>
                         <input className="btn btn-info btn-md"
                                type="button" value="Update your Headline" id="headline_btn"
                                onClick={() => {
+                                   console.log("I am here!" + this.newHeadline.value)
                                    this.props.dispatch(updateHeadline(this.newHeadline.value))
                                    this.newHeadline.value = ''
                                }}/>

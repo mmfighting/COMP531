@@ -7,6 +7,19 @@ import {fetchProfile, validateProfile} from '../profile/profileActions'
 export function initialMainView() {
     return (dispatch) => {
         // try to log in
+        // resource('GET', 'headlines').then((response) => {
+        //     let t1=dispatch({
+        //         type: Action.UPDATE_HEADLINE,
+        //         username: response.headlines[0].username,
+        //         headline: response.headlines[0].headline
+        //     })
+        //     let t2=dispatch(fetchProfile())
+        //     let t3=dispatch(fetchFollowers())
+        //     let t4=dispatch(fetchArticles())
+        //     return Promise.all([t1, t2, t3, t4]).then(()=>{
+        //         dispatch(navToMain())
+        //     })
+        // }).catch((err) => {})
         resource('GET', 'headlines').then((response) => {
             dispatch(navToMain())
             dispatch({

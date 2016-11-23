@@ -32,7 +32,7 @@ function articles(state = { articles: {}, searchKeyword: '', avatars: {} }, acti
 function profile(state = { username:'', headline: '', avatar: '', zipcode: '', email: '', dob: '' }, action) {
     switch (action.type) {
         case Action.UPDATE_HEADLINE:
-            return {...state, headline: action.headline}
+            return {...state, username: action.username, headline: action.headline}
         case Action.LOGIN_LOCAL:
             return {...state, username: action.username}
         case Action.LOGOUT:

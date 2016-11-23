@@ -65,8 +65,8 @@ class Register extends Component {
                     <div className="form-group row">
                         <span className="col-sm-3 form-control-label"> </span>
                         <div className="col-sm-8">
-                            <input className="btn btn-success" id="register_btn" type="submit" value="Register"/>
-                            <input className="btn btn-primary" value="Clear" onClick={()=>{
+                            <input className="btn btn-success" id="register_btn" type="submit" defaultValue="Register"/>
+                            <input className="btn btn-primary" defaultValue="Clear" onClick={()=>{
                                 this.username.value='';
                                 this.email.value='';
                                 this.dob.value='';

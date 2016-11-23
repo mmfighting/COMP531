@@ -29,12 +29,24 @@ export function fetchArticles() {
 	}
 }
 
+// export function uploadArticle(message, file) {
+// 	return (dispatch) => {
+// 		const fd = new window.FormData()
+// 		fd.append('text', message)
+// 		fd.append('image', file)
+// 		resource('POST', 'article', fd, false)
+// 			.then((response) => {
+// 				const article = response.articles[0]
+// 				dispatch({ type: Action.ADD_ARTICLE, article})
+// 			})
+// 	}
+// }
+
 export function uploadArticle(message, file) {
 	return (dispatch) => {
-		const fd = new window.FormData()
-		fd.append('text', message)
-		fd.append('image', file)
-		resource('POST', 'article', fd, false)
+		const payload = {}
+		payload.text = message
+		resource('POST', 'article', payload)
 			.then((response) => {
 				const article = response.articles[0]
 				dispatch({ type: Action.ADD_ARTICLE, article})

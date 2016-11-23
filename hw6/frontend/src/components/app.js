@@ -25,5 +25,6 @@ const App = ({location}) => {
 }
 
 export default connect((state) => {
+    console.log(state)
     return { location: state.common.location }
 })(App)

@@ -24,7 +24,7 @@ class NewArticle extends Component {
             <div className="well">
                 <div>
                     <h5>Post something:</h5>
-                    <textarea class="newPostText"
+                    <textarea className="newPostText"
                               id="newPostText"
                               rows="4"
                               placeholder="Anything interesting"

@@ -59,7 +59,9 @@ const getdob = (req, res)=> {
         if(err){
             res.status(401).send("uid is invalid, can't get its email")
         }else{
-            res.send({username: req.username, dob: usrObj[0]['dob']})
+            console.log(usrObj[0]['dob'])
+            console.log(usrObj[0]['dob'].getTime())
+            res.send({username: req.username, dob: usrObj[0]['dob'].getTime()})
         }
     })
 }

@@ -65,6 +65,7 @@ export function updateProfile({email, zipcode, password, pwconf}) {
 
 export function fetchProfile() {
     return (dispatch) => {
+        dispatch(fetchField('dob'))
         dispatch(fetchField('avatars'))
         dispatch(fetchField('zipcode'))
         dispatch(fetchField('email'))
@@ -97,6 +98,10 @@ function fetchField(field) {
         resource('GET', field).then((response) => {
             const action = {type: Action.UPDATE_PROFILE}
             switch (field) {
+                case 'dob':
+                    const date=new Date(response.dob)
+                    action.dob = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear()
+                    break;
                 case 'avatars':
                     action.avatar = response.avatars[0].avatar;
                     break;

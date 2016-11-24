@@ -112,7 +112,7 @@ const putpassword = (req, res)=> {
         }
     })
 }
-s
+
 function isLoggedIn(req, res, next) {
     console.log("checking whether user is local logged in...")
     const sid = req.cookies[cookieKey]

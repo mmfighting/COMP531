@@ -1,0 +1,15 @@
+/**
+ * Created by lh11 on 12/13/16.
+ */
+{
+  "testaccounts": [
+    {
+      "username": "test",
+      "password": 123
+    },
+    {
+      "username": "lh11",
+      "password": "l;'"
+    }
+  ]
+}
